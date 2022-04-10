@@ -110,6 +110,9 @@ public class ConectPaneMenu extends JPanel {
                 cardLayoutChat_panel.revalidate();
                 cardLayoutChat_panel.repaint();
                 conectPaneMenuHashMap.remove(Server+":"+port);
+                CollectAccount.remove(Server+":"+port);
+                FollowChatWithAccount.revalidate();
+                FollowChatWithAccount.repaint();
                 clientUa.disconnect();
             }
         });
