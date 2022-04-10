@@ -75,8 +75,7 @@ public class ServerMainConnect {
     }
 
     private void display(String msg) {
-        String time = msg;
-        System.out.println(time);
+        System.out.println(msg);
 
     }
 

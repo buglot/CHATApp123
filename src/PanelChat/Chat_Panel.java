@@ -73,7 +73,6 @@ public class Chat_Panel extends JPanel {
     }
 
     public class BodyChat extends JPanel {
-        private JScrollBar vertical;
 
         public BodyChat(Color color) {
             setLayout(new MigLayout("fillx"));

@@ -54,10 +54,15 @@ public class ConectPaneMenu extends JPanel {
         //นายยงเกียรติ แสวงสุข 6430300790
 
         CollectAccount.put(Server+":"+port,new myJScrollPane(new NewPanelMe(getBackground())));
+
         FollowChatWithAccount.add(CollectAccount.get(Server+":"+port),Server+":"+port);
-        CollectAccount.get(Server+":"+port).getPanelAdd().add(new LabelTitle("Account"),"wrap");
+
+        CollectAccount.get(Server+":"+port).getPanel().add(new LabelTitle("Account"),"wrap");
+
         chat_panel1.put(Server+":"+port,new Chat_Panel(Username,Server+":"+port));
+
         cardLayoutChat_panel.add(chat_panel1.get(Server+":"+port),Server+":"+port);
+
         this.clientUa = new ClientUa(Server,port,Username,chat_panel1.get(Server+":"+port),CollectAccount);
         if(!this.clientUa.start()){
             return;
@@ -88,6 +93,7 @@ public class ConectPaneMenu extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 cl.show(FollowChatWithAccount,Server+":"+port);
+
                 cl2.show(cardLayoutChat_panel,Server+":"+port);
             }
         });
@@ -104,6 +110,7 @@ public class ConectPaneMenu extends JPanel {
                 cardLayoutChat_panel.revalidate();
                 cardLayoutChat_panel.repaint();
                 conectPaneMenuHashMap.remove(Server+":"+port);
+                clientUa.disconnect();
             }
         });
 

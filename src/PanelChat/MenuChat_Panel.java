@@ -61,7 +61,7 @@ public class MenuChat_Panel extends JPanel {
         conectPaneMenuHashMap= new HashMap<>();
         CollectAccount.put("0",new myJScrollPane(new NewPanelMe(getBackground())));
         FollowChatWithAccount.add(CollectAccount.get("0"),"0");
-        CollectAccount.get("0").getPanelAdd().add(new LabelTitle("Account"),"wrap");
+        CollectAccount.get("0").getPanel().add(new LabelTitle("Account"),"wrap");
 
         MainMenu.add(FollowChatWithAccount, "Account");
         MainMenu.add(EChat, "Chat");
@@ -82,14 +82,14 @@ public class MenuChat_Panel extends JPanel {
             color = new Color(48, 114, 140);
         }
         ProfileA.put(name,new PaneNameUser(name,color));
-        CollectAccount.get(serverPort).getPanelAdd().add(ProfileA.get(name),"wrap , w :93%");
-        CollectAccount.get(serverPort).getPanelAdd().revalidate();
-        CollectAccount.get(serverPort).getPanelAdd().repaint();
+        CollectAccount.get(serverPort).getPanel().add(ProfileA.get(name),"wrap , w :93%");
+        CollectAccount.get(serverPort).getPanel().revalidate();
+        CollectAccount.get(serverPort).getPanel().repaint();
     }
     public void RemoveAccount(String name,String serverPort){
-        CollectAccount.get(serverPort).getPanelAdd().remove(ProfileA.get(name));
-        CollectAccount.get(serverPort).getPanelAdd().revalidate();
-        CollectAccount.get(serverPort).getPanelAdd().repaint();
+        CollectAccount.get(serverPort).getPanel().remove(ProfileA.get(name));
+        CollectAccount.get(serverPort).getPanel().revalidate();
+        CollectAccount.get(serverPort).getPanel().repaint();
     }
     class doButton implements ActionListener {
         @Override

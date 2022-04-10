@@ -55,7 +55,7 @@ public class ClientUa {
         this.server = server;
         this.port = port;
         this.username = username;
-        this.newAccountlist=acc.get(server+":"+port).getPanelAdd();
+        this.newAccountlist=acc.get(server+":"+port).getPanel();
         // save if we are in GUI mode or not
         this.cg = cg;
         ProfileA = new HashMap<>();
@@ -127,7 +127,7 @@ public class ClientUa {
      * When something goes wrong
      * Close the Input/Output streams and disconnect not much to do in the catch clause
      */
-    private void disconnect() {
+    public void disconnect() {
         try {
             if (sInput != null) sInput.close();
         } catch (Exception e) {

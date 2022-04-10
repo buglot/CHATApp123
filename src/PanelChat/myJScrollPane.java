@@ -15,7 +15,7 @@ public class myJScrollPane extends JScrollPane {
         setBorder(new MatteBorder(0,0,0,1,new Color(75, 75, 75)));
     }
     //นายยงเกียรติ แสวงสุข 6430300790
-    public JPanel getPanelAdd() {
+    public JPanel getPanel() {
         return panelAdd;
     }
 }
